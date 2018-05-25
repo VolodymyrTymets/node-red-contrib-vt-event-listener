@@ -27,8 +27,8 @@ module.exports = function(RED) {
       // get input settings
       var time = parseInt(this.input || 5000);
 
-      console.log('v ->', v);
-      node.log('v ->', v);
+      console.log('v ->', time);
+      node.log('v ->', time);
 
       nodeRedAdapter(node, msg, time);
     });
