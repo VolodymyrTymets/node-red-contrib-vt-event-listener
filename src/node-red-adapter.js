@@ -39,7 +39,7 @@ const nodeRedAdapter = (node, msg, time = 5000) =>  {
     console.log('time  1 ->', time);
     setInterval(async () => {
       await manager.emitEntityEvent("record", ENTITY_EVENT_TYPES.CREATE, "the-entity-id");
-    }, 5000);
+    }, time);
     node.log &&  node.log("Events emitted!");
   }).catch((err) => {
     node.warn && node.warn(err);
