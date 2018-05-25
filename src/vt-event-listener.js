@@ -1,6 +1,6 @@
 const { nodeRedAdapter } = require('./node-red-adapter');
 
-var moduleName = 'vt-event-listener';
+var moduleName = 'test-event-listener';
 
 module.exports = function(RED) {
   'use strict';
@@ -25,12 +25,12 @@ module.exports = function(RED) {
       node.log('input ->', this.input);
 
       // get input settings
-      var v = msg.payload.hasOwnProperty(this.input) ? msg.payload[this.input] : msg.payload;
+      var time = parseInt(this.input || 5000);
 
       console.log('v ->', v);
       node.log('v ->', v);
 
-      nodeRedAdapter(node, msg);
+      nodeRedAdapter(node, msg, time);
     });
 
   } // ---- end of nodeGo function ---- //

@@ -31,11 +31,13 @@ async function bootstrapListen(node, msg) {
 }
 
 
-const nodeRedAdapter = (node, msg) =>  {
+const nodeRedAdapter = (node, msg, time = 5000) =>  {
   return bootstrapListen(node, msg).then(async (manager) => {
     node.log &&  node.log("Init complete - start emitting events!");
     console.log("Init complete - start emitting events!");
-    await  emitTestData(manager);
+    setInterval(async () => {
+      await manager.emitEntityEvent("record", ENTITY_EVENT_TYPES.CREATE, "the-entity-id");
+    }, time);
     node.log &&  node.log("Events emitted!");
   }).catch((err) => {
     node.warn && node.warn(err);
