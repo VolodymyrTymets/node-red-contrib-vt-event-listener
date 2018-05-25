@@ -1,6 +1,6 @@
 const { nodeRedAdapter } = require('./node-red-adapter');
 
-var moduleName = 'vt-test';
+var moduleName = 'vt-event-listener';
 
 module.exports = function(RED) {
   'use strict';
