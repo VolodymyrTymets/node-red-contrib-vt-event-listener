@@ -1,0 +1,8 @@
+db-kafka:
+    image: johnnypark/kafka-zookeeper
+    hostname: localhost
+    environment:
+      ADVERTISED_HOST: localhost
+    ports:
+          - 9092:9092
+          - 2181:2181
