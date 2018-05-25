@@ -30,7 +30,7 @@ module.exports = function(RED) {
       console.log('v ->', v);
       node.log('v ->', v);
 
-      nodeRedAdapter({});
+      nodeRedAdapter(node, msg);
     });
 
   } // ---- end of nodeGo function ---- //

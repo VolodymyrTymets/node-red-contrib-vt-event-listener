@@ -15,13 +15,17 @@ async function bootstrapListen(node, msg) {
 
   changeStreamCreate.forEach((newEvent) => {
     // set result value here
+    node.log && node.log('new event ->', newEvent);
+    console.log('new event ->', newEvent);
     msg.payload.event = newEvent;
     // send response
     node.send(msg);
   }).then(() => {
-    mode.warn("Stream finished, this usually never happens");
+    node.warn && node.warn("Stream finished, this usually never happens");
+    console.log("Stream finished, this usually never happens");
   }).catch((e) => {
-    mode.warn("An error: ", e);
+    node.warn && node.warn("An error: ", e);
+    console.log("An error: ", e);
   });
 
   return manager;
@@ -29,12 +33,14 @@ async function bootstrapListen(node, msg) {
 
 
 const nodeRedAdapter = (node, msg) =>  {
-  bootstrapListen(node, msg).then(async (manager) => {
-    mode.log("Init complete - start emitting events!");
+  return bootstrapListen(node, msg).then(async (manager) => {
+    node.log &&  node.log("Init complete - start emitting events!");
+    console.log("Init complete - start emitting events!");
     await  emitTestData(manager);
-    mode.log("Events emitted!");
+    node.log &&  node.log("Events emitted!");
   }).catch((err) => {
-    mode.warn(err);
+    node.warn && node.warn(err);
+    console.log(err);
   });
 };
 
