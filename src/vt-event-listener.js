@@ -20,14 +20,13 @@ module.exports = function(RED) {
     // respond to inputs....
     node.on('input', function (msg) {
       'use strict'; // We will be using eval() so lets get a bit of safety using strict
-
-      console.log('input ->', this.input);
-      node.log('input ->', this.input);
+      const input = this || 0;
+      console.log('input ->', input);
+      node.log('input ->', input);
 
       // get input settings
-      var time = parseInt(this.input || 5) * 1000;
+      var time = parseInt(input || 5) * 1000;
       msg.payload = msg.payload || {};
-      msg.payload.input  = this.input;
 
       console.log('v ->', time);
       node.log('v ->', time);
