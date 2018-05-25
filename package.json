@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-vt-event-listener",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node-Red Node event listener pallet.",
   "dependencies": {
     "@types/kafka-node": "^2.0.6",
