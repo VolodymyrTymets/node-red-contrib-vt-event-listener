@@ -16,7 +16,7 @@ async function bootstrapListen(node, msg) {
     // set result value here
     node.log && node.log('new event ->', newEvent);
     console.log('new event ->', newEvent);
-    msg.pauload = msg.pauload || {};
+    msg.payload = msg.payload || {};
     msg.payload.event = newEvent;
     // send response
     node.send(msg);
@@ -38,7 +38,7 @@ const nodeRedAdapter = (node, msg, time = 5000) =>  {
     console.log("Init complete - start emitting events!");
     setInterval(async () => {
       await manager.emitEntityEvent("record", ENTITY_EVENT_TYPES.CREATE, "the-entity-id");
-    }, 5000);
+    }, time);
     node.log &&  node.log("Events emitted!");
   }).catch((err) => {
     node.warn && node.warn(err);
