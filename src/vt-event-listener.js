@@ -21,15 +21,10 @@ module.exports = function(RED) {
     node.on('input', function (msg) {
       'use strict'; // We will be using eval() so lets get a bit of safety using strict
       const input = this.input || 0;
-      console.log('input ->', input);
-      node.log('input ->', input);
 
       // get input settings
       var time = parseInt(input) * 1000;
       msg.payload = msg.payload || {};
-
-      console.log('time ->', time);
-      node.log('time ->', time);
 
       nodeRedAdapter(node, msg, time);
     });
