@@ -25,9 +25,9 @@ module.exports = function(RED) {
       node.log('input ->', this.input);
 
       // get input settings
-      var time = parseInt(this.input || 5000);
+      var time = parseInt(this.input || 5) * 1000;
       msg.pauload = msg.pauload || {};
-      msg.pauload.this.input;
+      msg.pauload.input  = this.input;
 
       console.log('v ->', time);
       node.log('v ->', time);
