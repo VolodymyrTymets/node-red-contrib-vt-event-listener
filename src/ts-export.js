@@ -1,10 +1,10 @@
 "use strict";
 exports.__esModule = true;
-var Index_1 = require("./_lib-event-stream/src/Index");
+var Index_1 = require("./lib-event-stream/src/Index");
 exports.EventStreamManager = Index_1["default"];
-var EventStreamManager_1 = require("./_lib-event-stream/src/EventStreamManager");
+var EventStreamManager_1 = require("./lib-event-stream/src/EventStreamManager");
 exports.ENTITY_EVENT_TYPES = EventStreamManager_1.ENTITY_EVENT_TYPES;
-var MockEventBroker_1 = require("./_lib-event-stream/src/adapaters/MockEventBroker");
+var MockEventBroker_1 = require("./lib-event-stream/src/adapaters/MockEventBroker");
 exports.MockEventBroker = MockEventBroker_1["default"];
-var ExampleEmitEvents_1 = require("./_lib-event-stream/examples/ExampleEmitEvents");
+var ExampleEmitEvents_1 = require("./lib-event-stream/examples/ExampleEmitEvents");
 exports.emitTestData = ExampleEmitEvents_1.emitTestData;
