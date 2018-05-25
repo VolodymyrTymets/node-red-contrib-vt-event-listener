@@ -1,5 +1,4 @@
-require("ts-node").register();
-const { EventStreamManager, ENTITY_EVENT_TYPES, MockEventBroker, emitTestData } = require("./node-red-adapter.ts");
+const { EventStreamManager, ENTITY_EVENT_TYPES, MockEventBroker, emitTestData } = require("./ts-export.js");
 
 /**
  * Function to start listen for events - the important part of the example!
